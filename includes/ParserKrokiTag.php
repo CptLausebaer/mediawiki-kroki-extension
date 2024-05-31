@@ -117,7 +117,6 @@ class ParserKrokiTag {
 	public static function onKrokiTag( $input, $args, $parser, $frame ): Status|string {
 		$tag = new self( $parser, $parser->getOptions(), $parser->getOutput() );
 
-		// Replace strip markers (For e.g. {{#tag:syntaxhighlight|<nowiki>...}})
 		$input = $parser->getStripState()->unstripNoWiki( $input ?? '' );
 
 		$html = $tag->buildHtmlInline( (string)$input, $args );
