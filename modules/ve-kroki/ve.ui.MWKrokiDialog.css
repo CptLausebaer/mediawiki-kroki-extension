@@ -1,0 +1,12 @@
+.ve-ui-mwKrokiDialog-content .ve-ui-mwExtensionWindow-input {
+	max-width: none;
+}
+
+.ve-ui-mwKrokiDialog-content .ve-ui-mwExtensionWindow-input textarea {
+	/* T176636 */
+	font-family: monospace, monospace;
+}
+
+.ve-ui-mwKrokiDialog-content .ve-ui-mwKrokiWindow-languageField {
+	max-width: 30em;
+}

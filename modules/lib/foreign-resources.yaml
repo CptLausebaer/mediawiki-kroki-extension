@@ -1,0 +1,14 @@
+pako:
+  license: 'MIT'
+  type: tar
+  integrity: 'sha384-oVsVe/7erCRQ+9EAzpPv6xnQfzeXIAkeA02QDx1vRaK21kRlc4/u4zWe77VJqH17'
+  src: https://registry.npmjs.org/pako/-/pako-2.1.0.tgz
+  dest:
+    package/dist/pako.min.js:
+base64-js:
+  license: 'MIT'
+  type: tar
+  integrity: 'sha384-miGZkm3Li5yaXcozuAzBW2Uk1BwXJPRpNvx6tmUfr9D1+IZJz11c/cZySk0rmo53'
+  src: https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz
+  dest:
+    package/base64js.min.js:

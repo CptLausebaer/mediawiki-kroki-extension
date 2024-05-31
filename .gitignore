@@ -1,0 +1,5 @@
+vendor
+node_modules
+modules/lib/.foreign
+composer.lock
+.eslintcache

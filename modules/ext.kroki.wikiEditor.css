@@ -1,0 +1,25 @@
+.wikieditor-kroki-side-by-side-container {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+.wikieditor-kroki-side-by-side-container > div {
+	width: 48%;
+	flex: 0 0 40em;
+}
+
+.wikieditor-kroki-side-by-side-container > fieldset {
+	padding: 0;
+	max-width: 100%;
+	width: 100%;
+	background-color: #efefef57;
+	border-radius: 2px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.wikieditor-kroki-dialog .oo-ui-window-frame {
+	width: 78vw !important;
+	height: 60vh !important;
+}

@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"John-Philipp Ludwig"
+		]
+	},
+	"kroki-error-category": "Seiten mit Kroki-Diagramm-fehlern",
+	"kroki-error-category-desc": "Es gab einen Fehler beim Rendern des Diagramms auf der Seite.",
+	"kroki-diagram-broken-category": "kroki-diagram-broken-category",
+	"kroki-diagram-tracking-category": "kroki-diagram-tracking-category",
+	"kroki-visualeditor-mwkrokiinspector-code": "Kroki",
+	"kroki-visualeditor-mwkrokiinspector-language": "Sprache",
+	"kroki-visualeditor-mwkrokiinspector-none": "(Keine)",
+	"kroki-visualeditor-mwkrokiinspector-title": "Kroki Diagramm",
+	"kroki-error-unknown-language": "Unbekannte Sprache „$1“",
+	"kroki-error-diagram-render-failed": "Rendern mit Kroki fehlgeschlagen",
+	"kroki-wikieditor-dialog-insert": "Einfügen",
+	"kroki-wikieditor-tool-label": "Kroki Diagramm",
+	"kroki-wikieditor-dialog-title": "Kroki Diagramm einfügen",
+	"kroki-wikieditor-language-label": "Diagrammtyp",
+	"kroki-wikieditor-code-label": "Quellcode"
+}

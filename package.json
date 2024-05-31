@@ -1,0 +1,18 @@
+{
+	"private": true,
+	"scripts": {
+		"lint:js": "eslint --cache .",
+		"lint:css": "stylelint --allow-empty-input '**/*.css'",
+		"lint:i18n": "banana-checker i18n/",
+		"test": "npm -s run lint:css && npm -s run lint:js && npm -s run lint:i18n"
+	},
+	"devDependencies": {
+		"eslint-config-wikimedia": "^0.27.0",
+		"grunt-banana-checker": "^0.13.0",
+		"stylelint-config-wikimedia": "^0.16.1"
+	},
+	"eslintIgnore": [
+		"vendor/**",
+		"resources/foreign/**"
+	]
+}

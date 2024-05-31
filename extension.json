@@ -1,0 +1,116 @@
+{
+	"name": "Kroki",
+	"author": "CptLausebaer",
+	"url": "",
+	"description": "This extension provides diagrams by using kroki.io",
+	"manifest_version": 2,
+	"version": "1.0",
+	"license-name": "GPL-3.0-or-later",
+	"type": "parserhook",
+	"requires": {
+		"MediaWiki": ">= 1.40"
+	},
+	"config": {
+		"KrokiBaseURL": {
+			"value": "https://kroki.io",
+			"description": "Set the Kroki server baseurl."
+		}
+	},
+	"TrackingCategories": [
+		"kroki-error-category",
+		"kroki-source-category"
+	],
+	"MessagesDirs": {
+		"Kroki": [
+			"i18n"
+		]
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Kroki\\": "includes/"
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "Kroki/modules"
+	},
+	"ForeignResourcesDir": "modules/lib",
+	"ResourceModules": {
+		"ext.kroki.styles": {
+			"styles": [
+				"ext.kroki.css"
+			]
+		},
+		"ext.kroki.visualEditor": {
+			"scripts": [
+				"ve-kroki/ve.dm.MWKrokiNode.js",
+				"ve-kroki/ve.ce.MWKrokiNode.js",
+				"ve-kroki/ve.ui.MWKrokiDialog.js",
+				"ve-kroki/ve.ui.MWKrokiDialogTool.js"
+			],
+			"styles": [
+				"ve-kroki/ve.ui.MWKrokiDialog.css"
+			],
+			"dependencies": [
+				"ext.visualEditor.mwcore",
+				"oojs-ui.styles.icons-editing-advanced"
+			],
+			"messages": [
+				"kroki-visualeditor-mwkrokiinspector-code",
+				"kroki-visualeditor-mwkrokiinspector-language",
+				"kroki-visualeditor-mwkrokiinspector-none",
+				"kroki-visualeditor-mwkrokiinspector-showlines",
+				"kroki-visualeditor-mwkrokiinspector-startingline",
+				"kroki-visualeditor-mwkrokiinspector-title"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.kroki.wikiEditor": {
+			"localBasePath": "modules",
+			"remoteExtPath": "Kroki/modules",
+			"scripts": [
+				"ext.kroki.wikiEditor.js",
+				"lib/pako/pako.min.js",
+				"lib/base64-js/base64js.min.js"
+			],
+			"styles": [
+				"ext.kroki.wikiEditor.css"
+			],
+			"dependencies": [
+				"ext.wikiEditor",
+				"ext.visualEditor.mwcore",
+				"mediawiki.jqueryMsg",
+				"mediawiki.language"
+			],
+			"messages": [
+				"kroki-wikieditor-tool-label",
+				"kroki-wikieditor-dialog-insert",
+				"kroki-wikieditor-dialog-title",
+				"kroki-wikieditor-language-label",
+				"kroki-wikieditor-code-label"
+			]
+		}
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "main",
+		"OutputPageParserOutput": "main",
+		"EditPage::showEditForm:initial": "main",
+		"SoftwareInfo": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Kroki\\Hooks"
+		}
+	},
+	"attributes": {
+		"Kroki": {
+			"Models": {}
+		},
+		"VisualEditor": {
+			"PluginModules": [
+				"ext.kroki.visualEditor"
+			]
+		}
+	}
+}
