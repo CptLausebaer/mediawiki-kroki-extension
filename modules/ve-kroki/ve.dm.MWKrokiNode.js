@@ -9,14 +9,12 @@
  */
 ve.dm.MWKrokiNode = function VeDmMWKrokiNode() {
 	// Parent method
-	ve.dm.MWKrokiNode.super.apply(this, arguments);
+	ve.dm.MWKrokiNode.super.apply( this, arguments );
 
 };
 
-
 /* Inheritance */
-OO.inheritClass(ve.dm.MWKrokiNode, ve.dm.MWExtensionNode);
-
+OO.inheritClass( ve.dm.MWKrokiNode, ve.dm.MWExtensionNode );
 
 /* Static members */
 
@@ -26,7 +24,7 @@ ve.dm.MWKrokiNode.static.extensionName = 'kroki';
 
 ve.dm.MWKrokiNode.static.tagName = 'div';
 
-ve.dm.MWKrokiNode.static.matchRdfaTypes = ['mw:Extension/kroki'];
+ve.dm.MWKrokiNode.static.matchRdfaTypes = [ 'mw:Extension/kroki' ];
 
 ve.dm.MWKrokiNode.static.supportedLanguages = [
 	'blockdiag',
@@ -58,15 +56,14 @@ ve.dm.MWKrokiNode.static.supportedLanguages = [
 	'wireviz'
 ];
 
-
 /* Static methods */
 
 // /**
 //  * @inheritdoc
 //  */
-ve.dm.MWKrokiNode.static.toDataElement = function (domElements, converter) {
+ve.dm.MWKrokiNode.static.toDataElement = function ( domElements, converter ) {
 
-	return ve.dm.MWExtensionNode.static.toDataElement.call(this, domElements, converter);
+	return ve.dm.MWExtensionNode.static.toDataElement.call( this, domElements, converter );
 };
 
 /**
@@ -75,8 +72,8 @@ ve.dm.MWKrokiNode.static.toDataElement = function (domElements, converter) {
  * @param {string} language Language name
  * @return {boolean} The language is supported
  */
-ve.dm.MWKrokiNode.static.isLanguageSupported = function (language) {
-	return ve.dm.MWKrokiNode.static.supportedLanguages.indexOf(language || undefined) !== -1;
+ve.dm.MWKrokiNode.static.isLanguageSupported = function ( language ) {
+	return ve.dm.MWKrokiNode.static.supportedLanguages.indexOf( language || undefined ) !== -1;
 };
 
 /**
@@ -96,12 +93,12 @@ ve.dm.MWKrokiNode.static.getLanguages = function () {
  * @return {boolean} The language is supported
  */
 ve.dm.MWKrokiNode.prototype.isLanguageSupported = function () {
-	return this.constructor.static.isLanguageSupported(this.getLanguage());
+	return this.constructor.static.isLanguageSupported( this.getLanguage() );
 };
 
 ve.dm.MWKrokiNode.prototype.getLanguage = function () {
-	return this.getAttribute('mw').attrs.lang.toLowerCase();
+	return this.getAttribute( 'mw' ).attrs.lang.toLowerCase();
 };
 
 /* Registration */
-ve.dm.modelRegistry.register(ve.dm.MWKrokiNode);
+ve.dm.modelRegistry.register( ve.dm.MWKrokiNode );

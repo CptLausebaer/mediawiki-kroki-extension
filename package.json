@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"scripts": {
-		"lint:js": "eslint --cache .",
+		"lint:js": "eslint --cache --ext .js,.json .",
 		"lint:css": "stylelint --allow-empty-input '**/*.css'",
 		"lint:i18n": "banana-checker i18n/",
 		"test": "npm -s run lint:css && npm -s run lint:js && npm -s run lint:i18n"

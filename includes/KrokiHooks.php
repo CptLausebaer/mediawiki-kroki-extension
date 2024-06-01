@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class Hooks
+ * Class KrokiHooks
  *
  * This class implements the ParserFirstCallInitHook and OutputPageParserOutputHook interfaces.
  * It defines two event handler methods, `onOutputPageParserOutput` and `onParserFirstCallInit`,
@@ -19,13 +19,13 @@ use Parser;
 use ParserOutput;
 
 /**
- * Class Hooks
+ * Class KrokiHooks
  *
  * This class implements the ParserFirstCallInitHook and OutputPageParserOutputHook interfaces.
  * It defines two event handler methods, `onOutputPageParserOutput` and `onParserFirstCallInit`,
  * which are triggered when the corresponding events occur.
  */
-class Hooks implements ParserFirstCallInitHook, OutputPageParserOutputHook {
+class KrokiHooks implements ParserFirstCallInitHook, OutputPageParserOutputHook {
 
 	/**
 	 * Finalizes the parser output by calling the "finalizeParserOutput" method

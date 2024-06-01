@@ -18,5 +18,6 @@
 	"kroki-wikieditor-tool-label": "Kroki Diagram",
 	"kroki-wikieditor-dialog-title": "Insert Kroki diagram",
 	"kroki-wikieditor-language-label": "diagram type",
+	"kroki-wikieditor-mwkrokiinspector-none": "(None)",
 	"kroki-wikieditor-code-label": "source"
 }

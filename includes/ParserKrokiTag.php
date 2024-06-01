@@ -24,13 +24,13 @@ class ParserKrokiTag {
 	 *
 	 * @var string KROKI_CSS_CLASS
 	 */
-	private const string KROKI_CSS_CLASS = 'mw-kroki';
+	private const KROKI_CSS_CLASS = 'mw-kroki';
 	private \ParserOptions $parserOptions;
 	private \ParserOutput $parserOutput;
 	private \Language $language;
 
 	/** @var string[] Diagram types */
-	public const array DIAGRAM_TYPES = [
+	public const DIAGRAM_TYPES = [
 		'blockdiag',
 		'bpmn',
 		'bytefield',
@@ -144,6 +144,15 @@ class ParserKrokiTag {
 	private function formatError( \Message $wfMessage, string $data_string = '', string $response_string = '' ): string {
 		$this->parserOutput->setExtensionData( 'kroki_diagram_broken', true );
 		$error = $wfMessage->inLanguage( $this->language )->parse();
+
+		if ( !empty( $response_string ) ) {
+			$contents = ( '<strong>HTTP-Response:</strong> ' . PHP_EOL .
+					$response_string . PHP_EOL . PHP_EOL )
+				. '<strong>Diagram-Code:</strong>' . $data_string;
+		} else {
+			$contents = '<strong>Diagram-Code:</strong>' . $data_string;
+		}
+
 		return Html::rawElement(
 			'div',
 			[ 'class' => self::KROKI_CSS_CLASS ],
@@ -152,7 +161,7 @@ class ParserKrokiTag {
 				[
 					'data-title' => $error,
 				],
-				( !empty( $response_string ) ? '<strong>HTTP-Response:</strong> ' . PHP_EOL . $response_string . PHP_EOL . PHP_EOL : '' ) . '<strong>Diagram-Code:</strong>' . $data_string
+				$contents
 			)
 		);
 	}

@@ -100,7 +100,7 @@
 	},
 	"HookHandlers": {
 		"main": {
-			"class": "MediaWiki\\Kroki\\Hooks"
+			"class": "MediaWiki\\Kroki\\KrokiHooks"
 		}
 	},
 	"attributes": {
