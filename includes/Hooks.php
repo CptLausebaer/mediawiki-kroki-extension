@@ -69,4 +69,13 @@ class Hooks implements ParserFirstCallInitHook, OutputPageParserOutputHook {
 			$outputPage->addModules( 'ext.kroki.wikiEditor' );
 		}
 	}
+
+	/**
+	 * Hook to add Pygments version to Special:Version
+	 *
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/SoftwareInfo
+	 * @param array &$software
+	 */
+	public function onSoftwareInfo( &$software ) {
+	}
 }
