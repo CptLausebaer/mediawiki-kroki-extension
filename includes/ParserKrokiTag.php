@@ -114,7 +114,7 @@ class ParserKrokiTag {
 	 * @param PPFrame $frame The PPFrame object for the current page.
 	 * @return Status|string The generated HTML or a Status object if there was an error.
 	 */
-	public static function onKrokiTag( $input, $args, $parser, $frame ): Status|string {
+	public static function onKrokiTag( $input, $args, $parser, $frame ) {
 		$tag = new self( $parser, $parser->getOptions(), $parser->getOutput() );
 
 		$input = $parser->getStripState()->unstripNoWiki( $input ?? '' );
@@ -224,7 +224,7 @@ class ParserKrokiTag {
 	 * @return Status|string The generated HTML or a Status object if there was an error.
 	 * @throws \MWException
 	 */
-	public function buildHtmlLocalfile( string $input, $args = null ): Status|string {
+	public function buildHtmlLocalfile( string $input, $args = null ) {
 		if ( $input === '' ) {
 			return $this->formatError( wfMessage( 'kroki-error-empty-input' ) );
 		}

@@ -200,12 +200,12 @@ $( function () {
 	KrokiDialogManager.prototype.getOutputFormat = function () {
 		const dialog = this;
 
-		const outputElement = $( '<kroki>', {
-			id: 'custom-id',
-			lang: dialog.language
-		} ).text( dialog.input );
+		const $outputElement = $( '<kroki>' )
+			.attr( 'id', 'custom-id' )
+			.attr( 'lang', dialog.language )
+			.text( dialog.input );
 
-		return outputElement.toString();
+		return $outputElement.toString();
 	};
 
 	KrokiDialogManager.prototype.getActionProcess = function ( action ) {
@@ -276,7 +276,10 @@ $( function () {
 		const source = dialog.input.getValue();
 
 		if ( diagramType && source && source.trim() !== '' ) {
-			const urlPath = diagramType + '/svg/' + base64js.fromByteArray( pako.deflate( textEncode( source ), { level: 9 } ) ).replace( /\+/g, '-' ).replace( /\//g, '_' );
+			const urlPath = diagramType + '/svg/' + base64js
+				.fromByteArray( pako.deflate( textEncode( source ), { level: 9 } ) )
+				.replace( /\+/g, '-' )
+				.replace( /\//g, '_' );
 			const url = 'http://192.168.188.156:8000/' + urlPath;
 			const req = new XMLHttpRequest();
 			req.onreadystatechange = function () {
@@ -285,12 +288,19 @@ $( function () {
 						const diagramTypeClass = 'diagram-' + diagramType;
 						dialog.diagram.$element.html( this.responseText );
 						dialog.diagram.$element.attr( 'class', '' );
+						// eslint-disable-next-line mediawiki/class-doc
 						dialog.diagram.$element.addClass( diagramTypeClass );
 					} else {
 						if ( this.responseText === '' ) {
-							dialog.diagram.$element.html( '<pre class="kroki-diagram-error">Error</pre>' );
+							dialog.diagram.$element.empty().append(
+								$( '<pre>' ).addClass( 'kroki-diagram-error' )
+									.text( 'Error' )
+							);
 						} else {
-							dialog.diagram.$element.html( '<pre class="kroki-diagram-error">' + this.responseText + '</pre>' );
+							dialog.diagram.$element.empty().append(
+								$( '<pre>' ).addClass( 'kroki-diagram-error' )
+									.text( this.responseText )
+							);
 						}
 
 						dialog.diagram.$element.attr( 'class', '' );
