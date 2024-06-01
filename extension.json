@@ -11,7 +11,7 @@
 		"MediaWiki": ">= 1.40"
 	},
 	"config": {
-		"KrokiBaseURL": {
+		"krokiServerEndpoint": {
 			"value": "https://kroki.io",
 			"description": "Set the Kroki server baseurl."
 		}
