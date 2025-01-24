@@ -281,7 +281,7 @@ $( function () {
 				.replace( /\+/g, '-' )
 				.replace( /\//g, '_' );
 
-			const url = mw.config.get("wgKrokiServerEndpoint").trimEnd('/') +'/' + urlPath;
+			const url = mw.config.get( 'wgKrokiServerEndpoint' ).replace( /\/+$/, '' ) + '/' + urlPath;
 			const req = new XMLHttpRequest();
 			req.onreadystatechange = function () {
 				if ( this.readyState === XMLHttpRequest.DONE ) {
