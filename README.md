@@ -67,12 +67,12 @@ using `wfLoadExtension( 'CodeEditor' );`, you will achieve an enhanced editing e
 ## Configuration
 
 ```
-$krokiServerEndpoint = "https://kroki.io";
+$wgKrokiServerEndpoint = "https://kroki.io";
 ```
 
 In order to address privacy issues and optimize performance, you can modify the server endpoint URL for the Kroki
 Service.
-This can be done by adjusting the `$krokiServerEndpoint` in the `LocalSettings.php` file.
+This can be done by adjusting the `$wgKrokiServerEndpoint` in the `LocalSettings.php` file.
 
 For setting up the service on your own, official Docker images are available at 'https://github.com/yuzutech/kroki'.
 Refer to the Kroki Documentation for more details on setup
