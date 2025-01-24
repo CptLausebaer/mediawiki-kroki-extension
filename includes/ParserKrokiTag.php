@@ -130,7 +130,7 @@ class ParserKrokiTag {
 	 * @return string
 	 */
 	private static function getKrokiUrl(): string {
-		return MediaWikiServices::getInstance()->getMainConfig()->get( 'krokiServerEndpoint' );
+		return MediaWikiServices::getInstance()->getMainConfig()->get( 'KrokiServerEndpoint' );
 	}
 
 	/**

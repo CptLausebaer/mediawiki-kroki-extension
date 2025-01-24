@@ -280,7 +280,8 @@ $( function () {
 				.fromByteArray( pako.deflate( textEncode( source ), { level: 9 } ) )
 				.replace( /\+/g, '-' )
 				.replace( /\//g, '_' );
-			const url = 'http://192.168.188.156:8000/' + urlPath;
+
+			const url = mw.config.get("wgKrokiServerEndpoint").trimEnd('/') +'/' + urlPath;
 			const req = new XMLHttpRequest();
 			req.onreadystatechange = function () {
 				if ( this.readyState === XMLHttpRequest.DONE ) {
