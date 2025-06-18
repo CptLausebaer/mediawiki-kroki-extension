@@ -55,13 +55,20 @@ $diagramTypes = [
 wfLoadExtension( 'Kroki' );
 ```
 
-To integrate the Kroki insert dialog into the WikiEditor, you also need to load the `WikiEditor` Extension by
+### Editors
+
+**WikiEditor**: To integrate the Kroki insert dialog into the WikiEditor, you also need to load the `WikiEditor` Extension by
 using `wfLoadExtension( 'WikiEditor' );`.
 
-Similarly, for integrating the Kroki insert dialog into the VisualEditor, the `VisualEditor` Extension must be loaded.
-This can be done with `wfLoadExtension( 'VisualEditor' );`.
+**VisualEditor**: Similarly, for integrating the Kroki insert dialog into the VisualEditor, the `VisualEditor` Extension must be loaded.
+This can be done with `wfLoadExtension( 'VisualEditor' );`. 
+When using Kroki with the VisualEditor the Math Extension is required. Enable the Math extension in your `LocalSetting.php`file:
 
-The dialog boxes include a multiline text input field. If you load the `CodeEditor` Extension
+```php
+wfLoadExtension( 'Math' );
+```
+
+**CodeEditor**: The dialog boxes include a multiline text input field. If you load the `CodeEditor` Extension
 using `wfLoadExtension( 'CodeEditor' );`, you will achieve an enhanced editing experience.
 
 ## Configuration
