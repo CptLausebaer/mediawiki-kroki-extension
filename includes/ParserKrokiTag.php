@@ -201,6 +201,7 @@ class ParserKrokiTag {
 
 		// Create HttpRequest
 		$request = MediaWikiServices::getInstance()->getHttpRequestFactory()->create( $url, $requestParams, __METHOD__ );
+		$request->setHeader( 'Content-Type', 'application/json; charset=utf-8' );
 
 		// Send the request
 		$status = $request->execute();
@@ -252,6 +253,7 @@ class ParserKrokiTag {
 
 		// Create HttpRequest
 		$request = MediaWikiServices::getInstance()->getHttpRequestFactory()->create( $url, $requestParams, __METHOD__ );
+		$request->setHeader( 'Content-Type', 'application/json; charset=utf-8' );
 
 		// Send the request
 		$status = $request->execute();
