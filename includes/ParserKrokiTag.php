@@ -327,7 +327,7 @@ class ParserKrokiTag {
 		return Html::rawElement(
 			'div',
 			[ 'class' => self::KROKI_CSS_CLASS ],
-			Html::element( 'img', [ 'src' => $imgUrl ] )
+			Html::element( 'img', [ 'src' => $imgUrl, 'type' => 'image/svg+xml' ] )
 		);
 	}
 
